@@ -215,3 +215,59 @@ def test_export_excludes_local_audit_and_history(tmp_path):
     assert (target / "src/public.py").exists()
     assert not list(target.rglob("*.pt"))
     assert not (target / "paper/code_supplement").exists()
+
+
+def test_publish_from_nested_package_excludes_parent_history(tmp_path, monkeypatch):
+    import importlib.util
+    import subprocess
+    import sys
+
+    repository = tmp_path / "dissertation"
+    package = repository / "projects" / "paper-package"
+    remote = tmp_path / "public.git"
+    repository.mkdir()
+
+    def git(*args):
+        return subprocess.check_output(
+            ["git", "-C", str(repository), *args], text=True
+        ).strip()
+
+    git("init", "--initial-branch=main")
+    git("config", "user.name", "Test Author")
+    git("config", "user.email", "test@example.invalid")
+    git("config", "commit.gpgsign", "false")
+    (repository / "private-research.txt").write_text(
+        "Private fixture, outside the publication scope.\n"
+    )
+    git("add", ".")
+    git("commit", "-m", "Private research history")
+    (package / "src").mkdir(parents=True)
+    (package / "README.md").write_text("Public paper package.\n")
+    (package / "src/public.py").write_text("value = 1\n")
+    git("add", ".")
+    git("commit", "-m", "Public source package")
+    subprocess.run(
+        ["git", "init", "--bare", "--initial-branch=main", str(remote)],
+        check=True,
+        capture_output=True,
+    )
+    script = Path(__file__).resolve().parents[1] / "scripts/publish.py"
+    spec = importlib.util.spec_from_file_location("paper_publish_contract", script)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    monkeypatch.setattr(module, "SOURCE", package)
+    monkeypatch.setattr(sys, "argv", [str(script), "--remote", str(remote)])
+    (repository / "private-research.txt").write_text("Unrelated staged fixture.\n")
+    git("add", "private-research.txt")
+    staged_before = git("ls-files", "--stage", "--", "private-research.txt")
+    module.main()
+    assert git("ls-files", "--stage", "--", "private-research.txt") == staged_before
+    published = subprocess.check_output(
+        ["git", "--git-dir", str(remote), "ls-tree", "-r", "--name-only", "main"],
+        text=True,
+    ).splitlines()
+    assert published == ["README.md", "src/public.py"]
+    commits = subprocess.check_output(
+        ["git", "--git-dir", str(remote), "rev-list", "--count", "main"], text=True
+    ).strip()
+    assert commits == "1"

@@ -9,10 +9,13 @@ Lean inputs, and compiled the manuscript. The main text remained ten pages.
 The scientific qualification report correctly rejected the paper's instability
 contrast and accuracy gates for this two-update, coarse-clock test.
 
-Nine software contracts pass. They cover physical reconstruction, residual
+Ten software contracts pass. They cover physical reconstruction, residual
 envelopes, scripted recurrence gradients, checkpointed gradients across chunks,
 directed-rounding witness checks, exact integer exports, source-only export and private audit/history exclusion,
-componentwise plateau/stall handling and manuscript-freshness rejection.
+componentwise plateau/stall handling, manuscript-freshness rejection, and a
+nested-package publishing integration test against a local Git remote. That
+test excludes parent-repository files and history while preserving unrelated
+staged changes.
 
 The 86 exported general proof modules are unchanged from their reviewed
 originals. Their package roots import successfully against the pinned local
@@ -33,7 +36,7 @@ convergence at the default settings have not yet been measured.
 This is now the permanent source repository. The author explicitly waived a full
 rehearsal for the cleanup/publication step. Its from-scratch recipe has not been
 shown empirically equivalent to the historical warm-start chain. That remains
-a stated validation limit, not a claim of reproduction. Nine software tests and
+a stated validation limit, not a claim of reproduction. Ten software tests and
 the recorded short integration checks provide the tested scope described above.
 Historical experiments remain archived without deletion. The public package
 excludes the two published-model-specific Lean instances; generated fresh matrix

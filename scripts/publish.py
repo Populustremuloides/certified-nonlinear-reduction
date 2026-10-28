@@ -74,7 +74,18 @@ def main():
     if args.dry_run:
         return
     sha = (
-        git("subtree", "split", "--prefix=" + prefix, "HEAD")
+        subprocess.check_output(
+            [
+                "git",
+                "-C",
+                str(repository),
+                "subtree",
+                "split",
+                "--prefix=" + prefix,
+                "HEAD",
+            ],
+            text=True,
+        ).strip()
         if prefix
         else git("rev-parse", "HEAD")
     )
