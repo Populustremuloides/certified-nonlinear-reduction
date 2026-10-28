@@ -1,0 +1,29 @@
+diff --git a/lakefile.lean b/lakefile.lean
+index e59f5c5..226d54e 100644
+--- a/lakefile.lean
++++ b/lakefile.lean
+@@ -2,9 +2,7 @@ import Lake
+ open Lake DSL System
+ 
+ package proofwidgets where
+-  preferReleaseBuild := true
+-  buildArchive? := "ProofWidgets4.tar.gz"
+-  releaseRepo := "https://github.com/leanprover-community/ProofWidgets4"
++  preferReleaseBuild := false
+ 
+ def widgetDir : FilePath := "widget"
+ 
+@@ -93,12 +91,10 @@ target widgetJsAll pkg : Unit :=
+ target widgetJsAllDev pkg : Unit :=
+   widgetJsAllTarget pkg (isDev := true)
+ 
+-@[default_target]
+ lean_lib ProofWidgets where
+-  needs := #[widgetJsAll]
++  globs := #[`ProofWidgets.+]
+ 
+ lean_lib ProofWidgets.Demos where
+-  needs := #[widgetJsAll]
+   globs := #[.submodules `ProofWidgets.Demos]
+ 
+ @[test_driver]

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "name": "Certified Stable Reductions",
+  "repositoryRoot": ".",
+  "defaultProject": "certified-stable-reductions",
+  "projects": [
+    {
+      "id": "certified-stable-reductions",
+      "title": "Certified Stable Reductions",
+      "root": "paper",
+      "mainFile": "main.tex",
+      "experiments": [
+        "src/stable_reduction",
+        "configs",
+        "runs"
+      ],
+      "readme": "README.md"
+    }
+  ]
+}

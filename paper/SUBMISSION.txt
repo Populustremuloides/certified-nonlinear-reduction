@@ -1,0 +1,52 @@
+L4DC 2027 submission preparation
+
+All manuscript text, proofs, appendices and references remain in main.tex.
+The official l4dc2027.cls is included alongside the existing jmlr.cls.
+
+Rebuild the complete PDF and submission pair from this directory:
+
+    sh compile_paper.sh
+
+The PDF split requires pypdf. The build script detects a suitable local Python;
+otherwise install pypdf in your Python environment or set L4DC_PDF_PYTHON.
+To split an already compiled complete PDF:
+
+    python3 prepare_submission.py
+
+Outputs:
+    output/pdf/paper_complete.pdf      Complete paper, references and supplement
+    output/pdf/paper_main.pdf          Main paper and references
+    output/pdf/paper_supplement.pdf    Supplementary proofs and Lean references
+    output/pdf/submission_manifest.json    Length, hashes and cross-part links
+
+The author order is Brian Charles Brown, David Grimsman, Michael King,
+Abel Palmer, Sean Warnick, Enoch Yeung. Abel's BYU affiliation reflects where
+he performed this work. Enoch's affiliation is UCSB Mechanical Engineering.
+The Generative AI Use subsection follows the supplied conference template.
+
+CURRENT LENGTH: 10 main-text pages, meeting the 10-page limit.
+The main PDF has 12 pages including two reference pages; the supplement has 15.
+The figure, conclusion and complete AI disclosure share page ten.
+Shallower plot panels preserve all data, scales, limits, encodings and labels,
+with essentially unchanged printed font sizes and line weights.
+No narrative or mathematical material was cut to meet the limit.
+The publication figure is retained in figures/compact_layout/mems_compact.pdf.
+The Python pipeline in the repository root writes fresh figures to runs/;
+it does not replace the reported figure or numerical claims automatically.
+No files have been uploaded to the submission portal.
+
+The dissertation working copy retains code_supplement/ and evidence/ locally,
+including the full frozen-model audit. They are excluded from GitHub.
+The public general proof package and pinned build instructions are in ../lean/.
+The unchanged-mathematics migration review is recorded locally in
+evidence/lean/repository-migration-review.json and summarized publicly in
+../provenance/repository_migration_review.json.
+
+Source repository:
+    https://github.com/Populustremuloides/certified-nonlinear-reduction
+L4DC 2027 uses single-blind review, so identifying authors and this link
+are consistent with the posted author instructions:
+    https://l4dc2027.control.ee.ethz.ch/author-information
+
+The full new training rehearsal was explicitly waived for this cleanup.
+See ../docs/validation.md for the checks that were actually performed.

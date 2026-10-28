@@ -1,0 +1,8 @@
+{
+  "mainFile": "main.tex",
+  "buildCommand": [
+    "/bin/sh",
+    "compile_paper.sh"
+  ],
+  "pdfFile": "output/pdf/paper_complete.pdf"
+}

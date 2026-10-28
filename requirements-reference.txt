@@ -1,0 +1,8 @@
+# Reference versions used for local validation; runtime packages only.
+numpy==2.0.2
+scipy==1.13.1
+torch==2.8.0
+matplotlib==3.9.4
+mpmath==1.3.0
+pypdf==6.9.2
+pytest==8.4.2

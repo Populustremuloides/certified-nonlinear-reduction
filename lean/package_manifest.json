@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "mathlib": {
+      "revision": "8a178386ffc0f5fef0b77738bb5449d50efeea95"
+    },
+    "plausible": {
+      "revision": "83e90935a17ca19ebe4b7893c7f7066e266f50d3"
+    },
+    "LeanSearchClient": {
+      "revision": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843"
+    },
+    "importGraph": {
+      "revision": "48d5698bc464786347c1b0d859b18f938420f060"
+    },
+    "proofwidgets": {
+      "revision": "3c52dee17f0cd89c1ec14de78920d1bdaa3d26b3",
+      "allowed_patch_sha256": "9dafe4fa48c70e0f7339df5ceceaf38314894dce0cba042329f4b8cd485a0d7d"
+    },
+    "aesop": {
+      "revision": "7152850e7b216a0d409701617721b6e469d34bf6"
+    },
+    "Qq": {
+      "revision": "707efb56d0696634e9e965523a1bbe9ac6ce141d"
+    },
+    "batteries": {
+      "revision": "756e3321fd3b02a85ffda19fef789916223e578c"
+    },
+    "Cli": {
+      "revision": "7802da01beb530bf051ab657443f9cd9bc3e1a29"
+    }
+  },
+  "scope": "Dependency pins and allowed build patch only; no frozen coefficients."
+}

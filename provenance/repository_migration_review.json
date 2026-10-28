@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-28",
+  "before_source_sha256": "0cedf95bd5cd4f3ec241cc96ee109deb423e35eda1c931aed51f9caeb30ce6e6",
+  "after_source_sha256": "b68964d5c9e2757c9bcc314fbe30bd485d5adaf182ad4413ca9ab210d48d20fd",
+  "named_results_reviewed": 11,
+  "proof_bodies_reviewed": 12,
+  "mathematical_content_unchanged": true,
+  "general_proof_sources_content_unchanged": 86,
+  "changes": [
+    "\\newcommand{\\leanref}[3]{\\par\\noindent{\\scriptsize\\textrm{Lean counterpart of #1}\\enspace\\IfFileExists{../lean/#2}{\\href{https://github.com/Populustremuloides/certified-nonlinear-reduction/blob/main/lean/#2}{\\texttt{\\detokenize{#3}}}}{\\texttt{\\detokenize{#3}} (archived instance proof)}}\\par}",
+    "The \\href{https://github.com/Populustremuloides/certified-nonlinear-reduction}{code repository} and Appendix~\\ref{app:experiment} give the training and verification details.",
+    "The resulting certificate concerns the learned recurrences, while prediction accuracy against the physical simulation is evaluated separately.\nThe public \\href{https://github.com/Populustremuloides/certified-nonlinear-reduction}{source repository} provides the training pipeline and general Lean proofs without trained checkpoints.\nThe published metrics are recorded in \\path{results/published/}; retraining produces separate models and verification inputs.",
+    "The repository includes the general Lean results, a source-to-declaration map and pinned build instructions; the supplementary audit package retains the original frozen-instance proofs.",
+    "The annotations above identify the declarations in the namespace \\texttt{Populus.ModelReduction.Certified}, with archived instance proofs marked separately.",
+    "Build instructions are in \\path{lean/README.md}; the supplementary audit package retains its own \\texttt{README.txt}."
+  ],
+  "training_rehearsal": "Waived; validation limits remain documented."
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "source": "active_papers/5_nonlinear_model_reduction_with_error_bounds/projects/reduction_failure_search_20261013/mems_physics.py",
+    "sha256": "12eb58a901c984deff299e632a770900dd61419842af3c65cfec9e7174f31a4a",
+    "definitions": [
+      "Switch"
+    ],
+    "destination": "src/stable_reduction/physics.py"
+  },
+  {
+    "source": "active_papers/5_nonlinear_model_reduction_with_error_bounds/projects/matched_failure_search_20261014/koopman_identity_comparison_20261015.py",
+    "sha256": "67ff75658720e3c807e1f6a7efb9ecdf2281fa0fd582d063395380c6b78d83bc",
+    "definitions": [
+      "ridge_map",
+      "square_root_balance"
+    ],
+    "destination": "src/stable_reduction/balancing.py"
+  },
+  {
+    "source": "active_papers/5_nonlinear_model_reduction_with_error_bounds/projects/matched_failure_search_20261014/interval_gain_witness.py",
+    "sha256": "79f992e58b387be73163b0870f24c89c5f226e4ee02d3b71749dde93942a2a8e",
+    "definitions": [
+      "iv_matrix",
+      "positive_ldl"
+    ],
+    "destination": "src/stable_reduction/interval.py"
+  },
+  {
+    "source": "active_papers/5_nonlinear_model_reduction_with_error_bounds/projects/matched_failure_search_20261014/fine_mems_complete_interval_budget.py",
+    "sha256": "5f81a26bbbb7bef2f89a0d558a5a4d97a396b5bbe7c27182ee592a270b0ce38e",
+    "definitions": [
+      "storage",
+      "verify"
+    ],
+    "destination": "src/stable_reduction/certification.py"
+  },
+  {
+    "source": "active_papers/5_nonlinear_model_reduction_with_error_bounds/projects/matched_failure_search_20261014/mems_r19_rollout_20261016.py",
+    "sha256": "005b12cdc050abf9ca78ab0c57b19438b347635ab526c76e0f7952141c100d4f",
+    "definitions": [
+      "Segment",
+      "segment_for"
+    ],
+    "destination": "src/stable_reduction/rollout.py"
+  },
+  {
+    "source": "active_papers/5_nonlinear_model_reduction_with_error_bounds/projects/matched_failure_search_20261014/train_fine_mems_global_curvature.py",
+    "sha256": "1666f98e1fabf74c0bd1e0dc90fe10d63e5c1a19f58b8e21ecd3631cc1e4ee2d",
+    "definitions": [
+      "packed",
+      "install",
+      "curvature_direction"
+    ],
+    "destination": "src/stable_reduction/optimizer.py"
+  }
+]

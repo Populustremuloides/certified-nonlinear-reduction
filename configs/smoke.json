@@ -1,0 +1,21 @@
+{
+  "seed": 2718,
+  "dt_us": 1.0,
+  "data_horizon_us": 140.0,
+  "train_horizon_us": 140.0,
+  "protocol_limit": 2,
+  "target_rank": 19,
+  "orders": [9, 19],
+  "warmup_updates": 1,
+  "full_updates": 1,
+  "window_steps": 16,
+  "warmup_lr": 0.0002,
+  "full_lr": 0.00001,
+  "validation_every": 1,
+  "matrix_every": 8,
+  "minimum_full_updates": 64,
+  "relative_improvement": 0.005,
+  "patience": 3,
+  "growth_threshold": 100000000.0,
+  "smoke": true
+}

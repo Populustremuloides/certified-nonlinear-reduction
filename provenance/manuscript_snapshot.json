@@ -1,0 +1,9 @@
+{
+  "authoritative_main": "paper/main.tex",
+  "monorepo_path": "active_papers/5_nonlinear_model_reduction_with_error_bounds/publication/certified-stable-reductions/paper/main.tex",
+  "github_repository": "https://github.com/Populustremuloides/certified-nonlinear-reduction",
+  "previous_source_sha256": "0cedf95bd5cd4f3ec241cc96ee109deb423e35eda1c931aed51f9caeb30ce6e6",
+  "source_sha256": "b68964d5c9e2757c9bcc314fbe30bd485d5adaf182ad4413ca9ab210d48d20fd",
+  "archive": "archive/model_reduction_pre_publication_20261028",
+  "scope": "Permanent home; source changes restricted to repository links and audit-location navigation. No mathematical statements, proof bodies or figure data changed."
+}
